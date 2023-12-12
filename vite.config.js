@@ -14,7 +14,7 @@ export default defineConfig({
     reactPlugin({
       // Only run fast-refresh for src
       fastRefresh: true,
-      include: 'src/**',
+      include: 'src',
 
       // Add extra emotion engine features
       jsxImportSource: '@emotion/react',
@@ -22,7 +22,7 @@ export default defineConfig({
 
     // Compress everything with Brotli while building, so we don't have to do it on the fly
     compressionPlugin({
-      algorithm: 'brotliCompress',
+      algorithm: 'brotli',
       filter: /\.(js|jsx|ts|tsx|css|svg|ico)$/i,
       verbose: false,
     }),
@@ -37,13 +37,13 @@ export default defineConfig({
     sourcemap: 'inline',
   },
   test: {
-    environment: 'jsdom',
+    environment: 'js',
     globals: true,
-    setupFiles: 'src/setupTests.ts',
+    setupFiles: 'src/setupTest.ts',
   },
   resolve: {
     alias: [
-      { find: '@/', replacement: '/src/' },
+      { find: '@/', replacement: 'src' },
     ],
   }
 })

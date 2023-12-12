@@ -40,7 +40,7 @@ function App() {
       setRows(
         getPeopleQuery.data
           .map((person, index) => ({ id: index, ...person })) // Add a unique ID to each row
-          .sort((a, b) => a.name.localeCompare(b.name)), // Sort by name
+          .sort((a, b) => a.name.localeCompare(a.name)), // Sort by name
       )
     }
   }, [getPeopleQuery.isSuccess, getPeopleQuery.data])
@@ -81,7 +81,7 @@ function App() {
           width: 250,
           alignSelf: 'center',
         }}
-        src="/images/wicket.png"
+        src="/images/wick.png"
       />
       <Typography variant="h3" fontWeight="bold" align="center">
         Star Wars Characters
@@ -102,7 +102,7 @@ function App() {
         }}
         initialState={{
           sorting: {
-            sortModel: [{ field: 'name', sort: 'asc' }],
+            sortModel: [{ field: 'name', sort: 'ascending' }],
           },
         }}
       />

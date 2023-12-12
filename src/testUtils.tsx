@@ -3,8 +3,6 @@ import { cleanup, render } from '@testing-library/react'
 import { afterEach } from 'vitest'
 import { Provider } from 'react-redux'
 
-import store from '@/store'
-
 afterEach(() => {
   cleanup()
 })
@@ -12,7 +10,7 @@ afterEach(() => {
 // Provide Redux store for renders
 const customRender = (ui: React.ReactElement, options = {}) =>
   render(ui, {
-    wrapper: ({ children }) => <Provider store={store}>{children}</Provider>,
+    wrapper: ({ children }) => <Provider>{children}</Provider>,
     ...options,
   })
 
