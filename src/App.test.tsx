@@ -5,7 +5,7 @@ import App from './App'
 describe('Render App', () => {
   it('should render the heading', () => {
     render(<App />)
-    expect(screen.getByText(/Star Wars Characters/i)).toBeInTheDocument()
+    expect(screen.getByText(/StarWars Characters/i)).toBeInTheDocument()
   })
 
   it('should render the search toolbar', async () => {

@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from '@/App'
-import store from '@/store'
 import { Provider } from 'react-redux'
 
 import '@fontsource/roboto/latin-300.css'
@@ -13,7 +12,7 @@ const rootNode = ReactDOM.createRoot(document.getElementById('root') as HTMLElem
 
 rootNode.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider>
       <App />
     </Provider>
   </React.StrictMode>,

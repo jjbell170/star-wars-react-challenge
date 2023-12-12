@@ -4,7 +4,7 @@ import { GridToolbarProps, GridToolbarContainer, GridToolbarQuickFilter } from '
 
 function SearchToolBar(props: GridToolbarProps) {
   return (
-    <GridToolbarContainer {...props}>
+    <GridToolbarContainer>
       <GridToolbarQuickFilter label="Filter by name" placeholder="Enter name here" />
     </GridToolbarContainer>
   )
