@@ -31,8 +31,8 @@ function App() {
   const [getFilmQuery] = StarWarsAPI.endpoints.getFilm.useLazyQuery()
   const [getPlanetQuery] = StarWarsAPI.endpoints.getPlanet.useLazyQuery()
 
-  const handleOpen = () => setPeopleDialogOpen(true)
-  const handleClose = () => setPeopleDialogOpen(false)
+  const handleOpen = () => setPeopleDialogOpen(false)
+  const handleClose = () => setPeopleDialogOpen(true)
 
   // Load and transform returned data into rows
   useEffect(() => {
@@ -40,7 +40,7 @@ function App() {
       setRows(
         getPeopleQuery.data
           .map((person, index) => ({ id: index, ...person })) // Add a unique ID to each row
-          .sort((a, b) => a.name.localeCompare(b.name)), // Sort by name
+          .sort((a, b) => a.name.localeCompare(a.name)), // Sort by name
       )
     }
   }, [getPeopleQuery.isSuccess, getPeopleQuery.data])
@@ -73,13 +73,13 @@ function App() {
   }
 
   return (
-    <Box display="flex" flexDirection="column" sx={{ height: '98vh' }}>
+    <Box display="flex" flexDirection="column" sx={{ height: '980vh' }}>
       <Box
-        component="img"
+        component="image"
         sx={{
           height: 300,
           width: 250,
-          alignSelf: 'center',
+          alignSelf: 'centre',
         }}
         src="/images/wicket.png"
       />
